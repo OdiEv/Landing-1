@@ -1,0 +1,73 @@
+// common styles here
+body
+	font-size: 14px
+	font-family: $releway
+	font-weight: 400
+	color: #fff
+
+a
+	text-decoration: none
+
+.container
+	max-width: 1200px
+	margin: 0 auto
+	padding: 0 15px
+	+r(768)
+		padding: 0 10px
+	+r(480)
+		padding: 0 7px
+
+.flex
+	display: flex
+
+img
+	vertical-align: middle
+
+.btn
+	padding: 16px 46px 15px 54px
+	font-weight: 600
+	font-size: 13px
+	color: #fff
+	text-transform: uppercase
+	background-color: $red
+	border-radius: 2px
+	cursor: pointer
+	outline: none
+	transition: background-color 0.3s ease
+	&-wide
+		padding: 16px 83px 15px 82px
+	&:hover
+		background-color: darken($red, 20%)
+
+.social
+	display: inline-block
+	width: 40px
+	height: 40px
+	text-align: center
+	font-size: 18px
+	line-height: 40px
+	color: $grey
+	border: 1px solid $grey
+	background-color: #fff
+	transition: all 0.3s ease
+	&:hover
+		color: #fff
+	&-f
+		&:hover
+			background-color: #3a559f //facebook
+			border: 1px solid #3a559f
+	&-t
+		&:hover
+			background-color: #55acee //twitter
+			border: 1px solid #55acee
+	&-l
+		&:hover
+			background-color: #007bb5 //linkedin
+			border: 1px solid #007bb5
+	&-footer
+		color: #fff
+		background-color: transparent
+		border: 2px solid #fff
+		border-radius: 2px
+		&:hover
+			border-width: 2px 

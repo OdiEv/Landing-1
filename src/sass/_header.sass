@@ -1,0 +1,110 @@
+.header
+	position: fixed
+	top: 0
+	width: 100%
+	border-bottom: 1px solid #31344f
+	background-color: transparent
+	transition: background-color 0.3s ease
+	z-index: 5
+	&.active
+		border-bottom: 2px solid $grey
+		background-color: $lilac
+	&-inner
+		flex-direction: row
+		justify-content: space-between
+	&-logo
+		padding-top: 40px
+		cursor: pointer
+		transition: padding-top 0.3s ease
+		+r(768)
+			padding-top: 15px
+		&.active
+			padding-top: 15px
+	&-item
+		a
+			display: block
+			padding: 42px 30px 41px
+			font-weight: bold
+			font-size: 13px
+			color: #fff
+			white-space: nowrap
+			text-transform: uppercase
+			border-bottom: 2px solid transparent
+			transition: border-bottom 0.3s ease
+			transition: color 0.3s ease
+			transition: padding 0.3s ease
+			+r(992)
+				padding: 42px 15px 41px
+			&.active
+				padding-top: 20px
+				padding-bottom: 18px
+			&:hover
+				color: $grey
+				border-bottom: 2px solid $red
+		&:last-child
+			a
+				padding-right: 0
+				&:hover
+					border-bottom: 2px solid transparent
+					color: $red
+	+r(768)
+		.nav
+			display: none
+			position: absolute
+			top: 57px
+			right: 0
+			width: 100%
+			z-index: 5
+		&-menu
+			flex-direction: column
+			background-color: $lilac
+		&-item
+			a
+				padding: 20px 0 18px
+				text-align: center
+			&:last-child a
+				border-bottom: 2px solid $grey
+				&:hover
+					border-bottom: 2px solid $grey
+
+.touch-menu
+	display: none
+	position: relative
+	padding: 10px 0
+	+r(768)
+		display: block 
+
+.hamburger
+	position: relative
+	width: 35px
+	height: 35px
+	cursor: pointer
+	&-icon
+		position: absolute
+		top: 15px
+		width: 35px
+		height: 5px
+		background-color: $grey
+		transition: opacity 0.3s ease
+		&:before, &:after
+			content: ''
+			position: absolute
+			width: 35px
+			height: 5px
+			background-color: $grey
+			transition: top 0.5s ease
+			transition: bottom 0.5s ease
+			transition: transform 0.5s ease
+		&:before
+			top: -15px
+		&:after
+			bottom: -15px
+	&.active
+		.hamburger-icon
+			background-color: rgba(0, 0, 0, 0)
+			&:before
+				top: 0
+				transform: rotate(45deg)
+			&:after
+				bottom: 0
+				transform: rotate(135deg)
