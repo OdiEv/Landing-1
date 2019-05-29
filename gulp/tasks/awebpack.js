@@ -18,22 +18,19 @@ function handler(err, stats, cb) {
 
 gulp.task('webpack', function(cb) {
   // modify some webpack config options
-  webpackConfig.optimization = {
-    minimize: true
-  };
   webpackConfig.plugins = webpackConfig.plugins.concat(
     new webpack.DefinePlugin({
       "process.env": {
         "NODE_ENV": JSON.stringify("production")
       }
     }),
-    // new webpack.optimize.UglifyJsPlugin({
-    //   sourceMap: false,
-    //   compress: {
-    //     drop_console: true,
-    //     unsafe: true
-    //   }
-    // }),
+    new webpack.optimize.UglifyJsPlugin({
+      sourceMap: false,
+      compress: {
+        drop_console: true,
+        unsafe: true
+      }
+    }),
     new webpack.LoaderOptionsPlugin({
       minimize: true
     })
